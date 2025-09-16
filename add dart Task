@@ -1,0 +1,81 @@
+class UserModel
+{
+  String id;
+  String name;
+  String email;
+  UserModel({required this.id, required this.name, required this.email });
+  
+}
+
+class ProductModel
+{
+  String id;
+  String name;
+  double price;
+  ProductModel({required this.id, required this.name, required this.price });
+  
+}
+
+ 
+class ItemNotFoundException implements Exception 
+{
+  String error()
+  {
+    return ("item not found");
+  }
+}
+
+void itemFounded({required List listProducts,required String productName})
+{
+  bool found=false;
+  for(final product in listProducts)
+  {
+    if(product.name==productName)
+    {
+      print ("product found");
+      found=true;
+      break;
+    }
+  }
+  if(!found)
+  {
+    throw ItemNotFoundException();
+  }
+}
+    
+
+void main()
+{
+  
+  List listUsers =[UserModel(id:'1',name:'shahd',email:'shahd.com'),UserModel(id:'2',name:'ahmed',email:'ahmed.com'),UserModel(id:'3',name:'ali',email:'ali.com')];
+
+  for(final user in listUsers)
+  {
+    print(user.name);
+  }
+  
+  
+///////////////////
+  
+  
+  List listProducts =[ProductModel(id:'1',name:'car',price:3000),ProductModel(id:'2',name:'phone',price:4000),ProductModel(id:'3',name:'cloths',price:5000)];
+
+  double sum=0;
+  for(final product in listProducts)
+  {
+    sum+=product.price;
+  }
+  print({"sum of all products = $sum"});
+  
+  
+  
+  try {
+  itemFounded(listProducts:listProducts ,productName:"car");
+  itemFounded(listProducts:listProducts ,productName:"apple");
+  } 
+  catch(e)
+  {
+    print((e as ItemNotFoundException).error());
+  }
+  
+}
