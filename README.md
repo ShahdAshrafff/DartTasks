@@ -1,7 +1,7 @@
 # Dart Learning Journey 🚀
 
 Welcome to my **Dart Learning Repository** 🎉  
-This repo contains all the **tasks, assignments, and practice projects** I am working on during the **ITI Dart Training**.  
+This repo contains all the **tasks, assignments, and practice projects** I am working on during the **ITI Flutter Training**.  
 
 It documents my progress while learning **Dart programming language** from scratch to advanced concepts.
 
@@ -41,3 +41,6 @@ Example: **User & Product Models**
 - Explore **packages and libraries** in Dart.  
 - Start building apps with **Flutter** after mastering Dart basics.  
 
+
+## 👩‍💻 Author
+Created with ❤️ by ShahdAshrafff
